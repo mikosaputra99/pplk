@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Untuk Girlfriend 💖</title>
+  <style>
+    body {
+      background-image: url('Background.jpg');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+      text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+      max-width: 600px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .date {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #ffd1dc;
+    }
+
+    .message {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #ffaad4;
+      text-shadow: 0 0 5px #000;
+    }
+
+    video {
+      max-width: 100%;
+      height: auto;
+      border: 4px solid #ff69b4;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background: #ff69b4;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+      margin-bottom: 25px;
+    }
+
+    button:hover {
+      background: #ff85c1;
+      transform: scale(1.05);
+    }
+
+    .slider {
+      position: relative;
+      width: 250px;
+      height: 160px;
+      margin: 0 auto 25px auto;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slider img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      animation: fade 15s infinite;
+      transition: opacity 1s ease-in-out;
+      border-radius: 12px;
+    }
+
+    .slider img:nth-child(1) { animation-delay: 0s; }
+    .slider img:nth-child(2) { animation-delay: 5s; }
+    .slider img:nth-child(3) { animation-delay: 10s; }
+
+    @keyframes fade {
+      0%   { opacity: 1; }
+      20%  { opacity: 1; }
+      33.33% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    .next-button {
+      display: inline-block;
+      padding: 12px 25px;
+      font-size: 18px;
+      color: #fff;
+      background: linear-gradient(45deg, #ff0066, #ff66cc);
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0px 5px 15px rgba(255, 0, 102, 0.4);
+    }
+
+    .next-button:hover {
+      background: linear-gradient(45deg, #ff66cc, #ff0066);
+      transform: scale(1.05);
+      box-shadow: 0px 10px 20px rgba(255, 0, 102, 0.6);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Tanggal dan Ucapan -->
+    <div class="date" id="tanggal"></div>
+    <div class="message">Dear Girlfriend 💕💖</div>
+
+    <!-- VIDEO -->
+    <video id="myVideo" loop playsinline>
+      <source src="mkla.mp4" type="video/mp4">
+      Browser Anda tidak mendukung video.
+    </video>
+    <br>
+    <button onclick="playWithSound()">Tap here my girl 💘</button>
+
+    <!-- SLIDER GAMBAR -->
+    <div class="slider">
+      <img src="gambar1.jpg" alt="Gambar 1">
+      <img src="gambar2.jpg" alt="Gambar 2">
+      <img src="gambar3.jpg" alt="Gambar 3">
+    </div>
+
+    <!-- NEXT -->
+    <a href="next.html" class="next-button">Next</a>
+  </div>
+
+  <script>
+    // Aktifkan suara video
+    function playWithSound() {
+      const video = document.getElementById("myVideo");
+      video.muted = false;
+      video.play();
+    }
+
+    // Tampilkan tanggal hari ini
+    const tanggalElement = document.getElementById("tanggal");
+    const hariIni = new Date();
+    const opsiTanggal = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    tanggalElement.textContent = hariIni.toLocaleDateString('id-ID', opsiTanggal);
+  </script>
+
+</body>
+</html>
